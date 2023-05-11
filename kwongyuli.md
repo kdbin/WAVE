@@ -873,3 +873,608 @@ public class AccountingClassApp {
 
   (Window -> showview)
 
+***
+
+2023-05-10 7일차 스터디
+-------------
+
+- BooleanApp
+
+<pre><code>
+package java_flow_control;
+
+public class BooleanApp {
+
+	public static void main(String[] args) {
+		
+		System.out.println("One");
+		System.out.println(1);
+		
+		System.out.println(true);
+		System.out.println(false);
+		
+		String foo = "Hello World";
+		// String true = "Good";
+		// true, false는 변수의 이름으로 사용할 수 없다
+		// 이미 쓰이고 있는 컴퓨터 언어
+		// = reserved word
+		
+		System.out.println(foo.contains("World")); // true
+		// .contains는 그 문자열에 입력값으로 전달할 어떠한 값이 들어있다면 true를 return하고,
+		// 없다면 false를 return 한다
+		System.out.println(foo.contains("egoing")); // false
+
+	}
+
+}
+</code></pre>
+
+- ComparisonOperatorApp
+
+<pre><code>
+package java_flow_control;
+
+public class ComparisonOperatorApp {
+
+	public static void main(String[] args) {
+		
+		System.out.println(1 > 1); // false
+		System.out.println(1 == 1); // true
+		System.out.println(1 < 1);
+		System.out.println(1 >= 1);
+		System.out.println(1 <= 1);
+		
+		// 비교연산자는 왼쪽에 있는 값과 오른쪽에 있는 값을 비교해서 그 결과가 무엇이냐에 따라서
+		// true or false 둘중 하나의 값을 만들어내는 연산자이다
+	}
+
+}
+</code></pre>
+
+- IfApp
+
+<pre><code>
+package java_flow_control;
+
+public class IfApp {
+
+	public static void main(String[] args) {
+		
+		System.out.println("a");
+//		if(false) {
+//			System.out.println(1);
+//		} else {
+//			if(true) {
+//			System.out.println(0);
+//			} else {
+//				System.out.println(00);
+//			}
+//		}
+		
+		if(false) {
+			System.out.println(1);
+		} else if (true) {
+			System.out.println(2);
+		} else {
+			System.out.println(3);
+		}
+		
+		System.out.println("b");
+		
+		// if문 () 안에는 boolean만이 저 값이 될 수 있다
+		// () 안의 값이 true일 때만 실행된다
+		// 변화 가능하도록 바꾸어야 한다
+	}
+
+}
+</code></pre>
+
+- AuthApp
+
+<pre><code>
+package java_flow_control;
+
+public class AuthApp {
+
+	public static void main(String[] args) {
+		
+		System.out.println(args[0]);
+		
+		String id = "egoing";
+		String inputId = args[0];
+		
+		String pass = "lk3374";
+		String inputPass = args[1];
+		
+		
+		System.out.println("Hi !");
+		
+		// if(inputId == id) {
+//		if(inputId.equals(id)) {
+//			if(inputPass.equals(pass)) {
+//				System.out.println("Master !!");
+//			} else {
+//				System.out.println("Wrong pass..");
+//			}
+//		} else {
+//			System.out.println("Who are you?");
+//		}
+		
+		if(inputId.equals(id) && inputPass.equals(pass)) {
+			System.out.println("Master !!");
+		} else {
+			System.out.println("Who are you??");
+		}
+		
+	}
+
+}
+</code></pre>
+
+- 산술 연산자
+
+  1 + 1 = 2 여기서 +은 산술연산자
+
+- 결합 연산자
+
+  “1” + “1” = “11” 여기서 +은 결합연산자 (문자열을 만들어내는 연산자)
+
+- primitive (데이터 타입)
+
+  원시라는 뜻으로, 더 이상 쪼갤 수 없는 데이터를 말한다
+
+	primitive = boolean, int, double, short, long, float, char
+
+	non primitive = String, Array, Date, File, Class ...
+
+- LogicalOperatorApp
+
+<pre><code>
+package java_flow_control;
+
+public class LogicalOperatorApp {
+
+	public static void main(String[] args) {
+		
+		// AND
+		System.out.println(1 == 1);
+		System.out.println(true && true); // true
+		// logical 연산자는 좌항과 우항 모두 boolean이 와야한다
+		System.out.println(true && false); // false
+		System.out.println(false && true); // false
+		System.out.println(false && false); // false
+		
+		// OR
+		System.out.println(true || true); // true
+		System.out.println(true || false); // true
+		System.out.println(false || true); // true
+		System.out.println(false || false); // false
+		
+		// NOT
+		System.out.println(!true); // false
+		System.out.println(!false); // true
+
+	}
+
+}
+</code></pre>
+
+- AuthApp2
+
+<pre><code>
+package java_flow_control;
+
+public class AuthApp2 {
+
+	public static void main(String[] args) {
+		
+		String id = "egoing";
+		String inputId = args[0];
+		
+		String pass = "lk3374";
+		String pass2 = "lk5332";
+		String inputPass = args[1];
+		
+		
+		
+		System.out.println("Hi !");
+		
+		boolean isRight = (inputPass.equals(pass) || inputPass.equals(pass2));
+		
+		
+		if(inputId.equals(id) && isRight) {
+			System.out.println("Master !!");
+		} else {
+			System.out.println("Who are you??");
+		}
+		
+	}
+
+}
+</code></pre>
+
+- LoopApp
+
+<pre><code>
+package java_flow_control;
+
+public class LoopApp {
+
+	public static void main(String[] args) {
+		
+		System.out.println(1);
+		
+		int i = 0; // 어떤 변수 이름을 써도 되지만, 반복문에서 카운팅하기 위해 i를 쓴다
+		while(i < 3) {
+			System.out.println(2);
+			System.out.println(3);
+			// i = i + 1;
+			i++;
+		}
+		
+		System.out.println("----------------------------------");
+		
+		// 괄호 안에는 boolean
+		// 디버거 F6번 사용 (다음줄 실행)
+		
+		// 몇번 반복해 ~ 라고 시킬 땐 for문이 더 좋다
+		// 괄호 안에 초깃값 설정, boolean, 반복이 실행될 때마다 +
+		for(int j = 0; j < 3; j++) {
+			System.out.println(2);
+			System.out.println(3);
+		}
+		// 무조건 한번은 실행된다
+		
+		System.out.println(4);
+
+	}
+
+}
+</code></pre>
+
+- ArrayApp
+
+<pre><code>
+package java_flow_control;
+
+public class ArrayApp {
+
+	public static void main(String[] args) {
+		
+		// egoing, jinhuck, youbin
+		// String users = "egoing, jinhuck, youbin";
+		String[] users = new String[3]; // 배열의 크기 3 (3칸짜리 캐비닛)
+		users[0] = "egoing";
+		users[1] = "jinhuck";
+		users[2] = "youbin";
+		// 문자열로 이루어져 있는 배열이라고 하는 데이터 타입을 값으로 하는 users라고 하는 변수를 만드는 것
+		
+		System.out.println(users[1]);
+		System.out.println(users.length); // 배열에 담겨있는 값이 3개다
+		// = 3칸짜리 배열이다
+		
+		// 배열을 생성할 때 값을 담아서 생성하는 방법
+		int[] score = {10, 100, 100};
+		System.out.println(score[0]);
+		System.out.println(score.length);
+		
+		// 0,1,2 -> index
+		// "egoing"... -> element, 원소
+
+	}
+
+}
+</code></pre>
+
+- LoopArray
+
+<pre><code>
+package java_flow_control;
+
+public class LoopArray {
+
+	public static void main(String[] args) {
+		
+		/*
+		 * <li>egoing</li>
+		 * <li>jinhuck</li>
+		 * <li>younin</li>
+		 */
+		
+		String[] users = new String[3]; 
+		users[0] = "egoing";
+		users[1] = "jinhuck";
+		users[2] = "youbin";
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.println("<li> " + users[i] +" </li>");
+		}
+		
+		for(int i = 0; i < users.length; i++) {
+			System.out.println(users[i] +",");
+			if(i==2) {
+				System.out.println(users[i]);
+			}
+		}
+	}
+}
+</code></pre>
+
+***
+
+2023-05-11 8일차 스터디
+-------------
+
+- AuthApp3
+
+<pre><code>
+package java_flow_control;
+
+public class AuthApp3 {
+
+	public static void main(String[] args) {
+		
+		// String[] users = {"egoing", "jinhuck", "youbin"};
+		String[][] users = {
+				{"egoing", "1111"},
+				{"jinhuck", "2222"},
+				{"youbin", "3333"}
+		}; // 각각의 원소가 배열이고, 그 배열의 값이 String인 데이터를 만든 것이다
+		
+		String inputId = args[0];
+		String inputpass = args[1];
+		
+		boolean isLogined = false;
+		for(int i=0; i<; i++) {
+			String[] current = users[i];
+			if(current[0].equals(inputId) && current[1].equals(inputpass)) {
+				isLogined = true;
+				break;
+			}
+		}
+		
+		System.out.println("Hi !!");
+		if(isLogined) {
+			System.out.println("Master ~~");
+		} else {
+			System.out.println("Who are you?");
+		}
+
+	}
+
+}
+</code></pre>
+
+- FirstMethod
+
+<pre><code>
+public class FirstMethod {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Hello Method"); // println도 method
+		System.out.println(Math.floor(1.1)); // 1.0
+
+	} 
+	// main이라는 method
+	// 자바 애플리케이션을 만들 때는 class를 만들어야 하고
+	// class를 실행시킬 때는 반드시 약속된 이름인 main이라고 하는 특수한 이름의 method를 정의해 놓으면
+	// first method를 실행해주라는 명령을 받으면 main이라는 method를 실행하도록 약속되어 있다
+
+}
+</code></pre>
+
+- WhyMethod
+
+<pre><code>
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class WhyMethod {
+	
+	public static void main(String[] args) throws IOException {
+		// main은 method이고 얘는 약속이고, 얘가 있어야 자바는 main을 호출해 프로그램을 실행시킨다
+		// String[]은 서로 연관된 문자열을 그룹핑하는 문자열 배열이다
+		// args는 main이라고 하는 method를 자바가 실행할 때 입력해주는 입력값이 args를 통해 들어온다
+		
+		printTwoTimes("a", "-");
+		printTwoTimes("b", "*");
+		// 한줄짜리더라도 메소드를 만드는 것은 좋은 습관이다
+		// a, b
+		// 함수 안으로 주입한 구체적인 값
+		// = 인자 = argument
+		System.out.println(twoTimes("a", "-"));
+		FileWriter fw = new FileWriter("out.txt");
+		fw.write(twoTimes("a", "*"));
+		fw.close();
+		// Email.send("egoing@a.com", "two times a", "twoTimes("a", "$"));
+
+	}
+
+	public static void printTwoTimes(String text, String delimiter) {
+		
+		System.out.println(delimiter);
+		System.out.println(text);
+		System.out.println(text);
+		
+	}
+	// 코드 우클릭 Refactor -> Extract Method...
+	// 메소드의 괄호 안에 들어오는 첫번째 값은 반드시 String
+	// 그리고 그렇게 들어온 값은 이 중괄호 안에서 text라는 이름의 변수의 값이 된다 
+	
+	// text, delimiter
+	// 이러한 변수들은 메소드 밖에서 메소드를 사용하는 쪽에서 주입한 값을 메소드 안으로 흘려보내주는 매개자다
+	// = 매개변수 = parameter
+	
+	public static String twoTimes(String text, String delimiter) {
+		String out = "";
+		out = out + delimiter + "\n";
+		out = out + text + "\n";
+		return out;
+	} // 화면에 출력하는 기능을 빼버리고 return 값을 가지고 있기 때문에 활용도가 높다
+
+}
+</code></pre>
+
+- OutputMethod
+
+<pre><code>
+public class OutputMethod {
+	
+	public static String a() {
+		// ...
+		return "a";
+		// return을 쓰게되면 a라는 method는 return 뒤의 값이 된다
+		// 그때 return할 값의 데이터 타입이 문자열이면 void가 아니라 String을 써야한다
+		// a라는 method는 output이 String이다
+	}
+	
+	public static int one() {
+		// ...
+		return 1;
+	}
+	// method의 output!
+	// 그 method의 return 값 뒤에 있는 값이 method의 실행 결과가 된다
+	// 그리고 return 값은 그 method를 종료시키는 역할도 한다
+	// method는 그 method return 값이 어떤 데이터 타입인지 정의해줘야 한다
+	// void는 return 값이 없는 method이다
+
+	public static void main(String[] args) {
+		
+		System.out.println(a());
+		System.out.println(one());
+
+	}
+
+}
+</code></pre>
+
+- 객체 지향 프로그래밍 (Object Oriented Programming)
+
+  서로 연관된 메소드와 변수를 그룹핑 해서 이름을 붙인 것 = class
+
+	class를 복제해서 서로 다른 내부적인 상태를 갖고있는 복제본들 = instance
+
+	class와 instance를 포괄적으로 객체라고 생각하기
+
+	이 객체를 뼈대로 하는 프로그램을 만들어가는 프로그래밍 방법론을 OOP
+
+- static
+
+  static이라는 키워드가 붙은 method는 class의 method이다
+
+	static이 없는 method는 instance의 method다
+
+- AccountingApp
+
+<pre><code>
+public class AccountingApp {
+	
+	// 공급가액
+	public static double valueOfSupply = 10000.0; // 전역변수
+			
+	// 부가가치세율
+	public static double vatRate = 0.1; // 전역변수
+	
+	public static double getVAT() {
+		return valueOfSupply * vatRate;
+	}
+	
+	public static double getTotal() {
+		return valueOfSupply + getVAT();
+	}
+	
+
+	public static void main(String[] args) {
+		
+		// 부가세
+		//double vat = valueOfSupply * vatRate;
+		// double vat = getVAT();
+		// 합계
+		// double total = valueOfSupply + vat;
+		// double total = getTotal();
+		
+		System.out.println("Vaule of supply :" +valueOfSupply);
+		System.out.println("VAT : "+getVAT());
+		System.out.println("Total : " +getTotal());
+
+	}
+
+}
+</code></pre>
+
+- AccessLevelModifiersMethod
+
+<pre><code>
+class Greeting{
+	public static void hi() {
+		System.out.println("Hi");
+	}
+} // 다른 class 안에 소속된 method
+
+public class AccessLevelModifiersMethod {
+	// public에는 다른 값이 올수도 있다
+	// public protected, default(생략), private
+	
+	// private = 같은 class 안에서만 사용할 수 있다
+
+	public static void main(String[] args) {
+		
+		Greeting.hi();
+
+	}
+
+}
+</code></pre>
+
+- staticMethod
+
+<pre><code>
+class Print{
+	public String delimiter;
+	public void a() {
+		System.out.println(this.delimiter);
+		System.out.println("a");
+		System.out.println("a");
+	}
+	
+	public void b() {
+		System.out.println(this.delimiter);
+		System.out.println("b");
+		System.out.println("b");
+	}
+	// this.delimiter은 t1 인스턴스의 변수의 값으로 지정한 "-"
+	
+	public static void c(String delimiter) {
+		System.out.println(delimiter);
+		System.out.println("c");
+		System.out.println("c");
+	}
+}
+
+public class staticMethod {
+
+	public static void main(String[] args) {
+//		Print.a("-");
+//		Print.b("-");
+		// 여기 a,b는 class은 Print 소속으로 실행되는 것
+		// 하지만 method가 class의 소속일 때는 static이 있어야 한다
+		
+		// 분신이 아니라 instance
+		Print t1 = new Print(); // 데이터타입이 Print인 변수에 담았다, t1은 Print class의 분신
+		t1.delimiter = "-"; // t1이라고 하는 Print의 분신은 내부적으로 구분자의 값이 -가 된다
+		t1.a(); // 구분자를 추가하지 않아도 똑같은 동작이 된다
+		t1.b();
+		// a와 b는 t1이라는 instance 소속으로 실행되는 것
+		// method가 instance 소속일 때는 static을 빼줘야 한다
+		// t1 instance는 내부적으로 delimiter라고 하는 변수의 값을 공유하고 있다
+		Print.c("$");
+		
+//		Print.a("*");
+//		Print.b("*");
+		// 이 두가지는 성격이 비슷하기 때문에 이 method들을 그룹핑하는 정리정돈의 도구 class를 이용
+	}
+
+}
+</code></pre>
+
